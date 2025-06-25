@@ -15,6 +15,7 @@ mongoose.connect('mongodb+srv://BhavanaMadhura:BHANU000@cluster0.pbqrtut.mongodb
 
 app.use('/api/todos', todoRoutes);
 
-app.listen(5000, () => {
-  console.log('Server running on http://localhost:5000');
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
