@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './index.css';
 
-const API_URL = 'http://localhost:5000/api/todos';
+const API_URL = "https://todo-list-zfjr.onrender.com/api/todos";
+
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -19,7 +20,7 @@ function App() {
 
   const addTodo = async () => {
     if (!text.trim()) return;
-    const res = await axios.post(API_URL, { text });
+    const res = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/todos`);
     setTodos([...todos, res.data]);
     setText('');
   };
