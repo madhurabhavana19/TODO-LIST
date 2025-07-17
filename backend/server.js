@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect('process.env.mongodb+srv://BhavanaMadhura:BHANU000@cluster0.pbqrtut.mongodb.net/todoDB?retryWrites=true&w=majority')
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.log(err));
 
