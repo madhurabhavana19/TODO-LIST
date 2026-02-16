@@ -20,7 +20,7 @@ function App() {
 
   const addTodo = async () => {
     if (!text.trim()) return;
-    const res = await axios.post(API_URL, { text });
+    const res = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/todos`);
     setTodos([...todos, res.data]);
     setText('');
   };
